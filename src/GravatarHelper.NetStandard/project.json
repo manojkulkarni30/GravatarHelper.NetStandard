@@ -8,11 +8,15 @@
   "authors": [ "Manoj Kulkarni" ],
 
   "packOptions": {
-    "projectUrl": "https://github.com/manojkulkarni30/GravatarHelper",
+    "summary": "A simple .Net Standard library to easily get profile picture, QR code image for profile and profile information for a user from Gravatar.",
+    "projectUrl": "https://github.com/manojkulkarni30/GravatarHelper.NetStandard",
     "tags": [ "gravatar, net standard" ],
+    "releaseNotes": "Initial Version",
+    "licenseUrl": "https://github.com/manojkulkarni30/GravatarHelper.NetStandard/blob/master/License.txt",
+    "owners": [ "Manoj Kulkarni" ],
     "repository": {
       "type": "git",
-      "url": "git://github.com/manojkulkarni30/GravatarHelper"
+      "url": "git://github.com/manojkulkarni30/GravatarHelper.NetStandard"
     }
   },
 
