@@ -1,0 +1,122 @@
+﻿{
+  "version": "1.0.0-alpha",
+
+  "title": "GravatarHelper.NetStandard",
+
+  "description": "A simple .Net Standard library to easily get profile picture, QR code image for profile and profile information for a user from Gravatar.",
+
+  "authors": [ "Manoj Kulkarni" ],
+
+  "packOptions": {
+    "projectUrl": "https://github.com/manojkulkarni30/GravatarHelper",
+    "tags": [ "gravatar, net standard" ],
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/manojkulkarni30/GravatarHelper"
+    }
+  },
+
+  "dependencies": {
+    "Newtonsoft.Json": "9.0.1"
+  },
+
+  "frameworks": {
+    "net35": {
+      "frameworkAssemblies": {
+        "System.Web": "",
+        "System.Net": ""
+      }
+    },
+
+    "net40": {
+      "frameworkAssemblies": {
+        "System.Net": ""
+      }
+    },
+
+    "net45": {
+      "frameworkAssemblies": {
+        "System.Net": "",
+        "System.Net.Http": "",
+        "System.Threading.Tasks": "",
+        "System.Linq": ""
+      }
+    },
+
+    "net451": {
+      "frameworkAssemblies": {
+        "System.Net": "",
+        "System.Net.Http": "",
+        "System.Threading.Tasks": "",
+        "System.Linq": ""
+      }
+    },
+
+    "net452": {
+      "frameworkAssemblies": {
+        "System.Net": "",
+        "System.Net.Http": "",
+        "System.Threading.Tasks": "",
+        "System.Linq": ""
+      }
+    },
+
+    "net46": {
+      "frameworkAssemblies": {
+        "System.Net": "",
+        "System.Net.Http": "",
+        "System.Threading.Tasks": "",
+        "System.Linq": ""
+      }
+    },
+
+    "net461": {
+      "frameworkAssemblies": {
+        "System.Net": "",
+        "System.Net.Http": "",
+        "System.Threading.Tasks": "",
+        "System.Linq": ""
+      }
+    },
+
+    "net462": {
+      "frameworkAssemblies": {
+        "System.Net": "",
+        "System.Net.Http": "",
+        "System.Threading.Tasks": "",
+        "System.Linq": ""
+      }
+    },
+
+    "netstandard1.1": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0",
+        "System.Security.Cryptography.Algorithms": "4.2.0"
+      },
+      "buildOptions": {
+        "define": [
+          "NETSTANDARD1_1"
+        ]
+      }
+    },
+
+    ".NETPortable,Version=v4.5,Profile=Profile259": {
+      "buildOptions": {
+        "define": [
+          "PORTABLE259"
+        ]
+      },
+      "frameworkAssemblies": {
+        "System": "",
+        "System.Linq": "",
+        "System.Threading.Tasks": ""
+      },
+      "dependencies": {
+        "PCLCrypto": "2.0.147",
+        "Microsoft.Net.Http": "2.2.29"
+      }
+    }
+  }
+
+}
