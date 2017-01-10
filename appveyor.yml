@@ -13,4 +13,4 @@ before_build:
  - cmd: dotnet restore
 
 build_script:
- - cmd: dotnet build GravatarHelper.NetStandard\src\GravatarHelper.NetStandard
+ - cmd: dotnet build GravatarHelper.NetStandard\src
