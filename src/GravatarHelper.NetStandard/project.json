@@ -7,8 +7,9 @@
 
   "authors": [ "Manoj Kulkarni" ],
 
+  "copyright": "Copyright © Manoj Kulkarni 2017",
+
   "packOptions": {
-    "summary": "A simple .Net Standard library to easily get profile picture, QR code image for profile and profile information for a user from Gravatar.",
     "projectUrl": "https://github.com/manojkulkarni30/GravatarHelper.NetStandard",
     "tags": [ "gravatar, net standard" ],
     "releaseNotes": "Initial Version",
