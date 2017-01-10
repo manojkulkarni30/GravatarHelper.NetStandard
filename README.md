@@ -1,4 +1,6 @@
-﻿# Gravatar Helper
+﻿![](https://ci.appveyor.com/api/projects/status/9gwwfn9lb0bxq846?svg=true)
+
+# Gravatar Helper
 
 A simple [.Net standard library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to easily get profile picture, QR code image for profile and profile information for a user from [Gravatar](http://en.gravatar.com/).
 
