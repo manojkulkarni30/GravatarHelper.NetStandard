@@ -21,88 +21,121 @@
     }
   },
 
-  "dependencies": {
-    "Newtonsoft.Json": "9.0.1"
-  },
-
   "frameworks": {
     "net35": {
       "frameworkAssemblies": {
+        "mscorlib": "",
+        "System": "",
+        "System.Core": "",
         "System.Web": "",
         "System.Net": ""
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "9.0.1"
       }
     },
 
     "net40": {
       "frameworkAssemblies": {
-        "System.Net": ""
+        "mscorlib": "",
+        "System": "",
+        "System.Core": ""
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "9.0.1"
       }
     },
 
     "net45": {
       "frameworkAssemblies": {
-        "System.Net": "",
-        "System.Net.Http": "",
-        "System.Threading.Tasks": "",
-        "System.Linq": ""
+        "mscorlib": "",
+        "System": "",
+        "System.Core": "",
+        "System.Net.Http": ""
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "9.0.1"
       }
     },
 
     "net451": {
       "frameworkAssemblies": {
-        "System.Net": "",
-        "System.Net.Http": "",
-        "System.Threading.Tasks": "",
-        "System.Linq": ""
+        "mscorlib": "",
+        "System": "",
+        "System.Core": "",
+        "System.Net.Http": ""
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "9.0.1"
       }
     },
 
     "net452": {
       "frameworkAssemblies": {
-        "System.Net": "",
-        "System.Net.Http": "",
-        "System.Threading.Tasks": "",
-        "System.Linq": ""
+        "mscorlib": "",
+        "System": "",
+        "System.Core": "",
+        "System.Net.Http": ""
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "9.0.1"
       }
     },
 
     "net46": {
       "frameworkAssemblies": {
-        "System.Net": "",
-        "System.Net.Http": "",
-        "System.Threading.Tasks": "",
-        "System.Linq": ""
+        "mscorlib": "",
+        "System": "",
+        "System.Core": "",
+        "System.Net.Http": ""
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "9.0.1"
       }
     },
 
     "net461": {
       "frameworkAssemblies": {
-        "System.Net": "",
-        "System.Net.Http": "",
-        "System.Threading.Tasks": "",
-        "System.Linq": ""
+        "mscorlib": "",
+        "System": "",
+        "System.Core": "",
+        "System.Net.Http": ""
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "9.0.1"
       }
     },
 
     "net462": {
       "frameworkAssemblies": {
-        "System.Net": "",
-        "System.Net.Http": "",
-        "System.Threading.Tasks": "",
-        "System.Linq": ""
+        "mscorlib": "",
+        "System": "",
+        "System.Core": "",
+        "System.Net.Http": ""
+      },
+      "dependencies": {
+        "Newtonsoft.Json": "9.0.1"
       }
     },
 
-    "netstandard1.1": {
-      "imports": "dnxcore50",
-      "dependencies": {
-        "NETStandard.Library": "1.6.0",
-        "System.Security.Cryptography.Algorithms": "4.2.0"
-      },
+    "netstandard1.3": {
       "buildOptions": {
         "define": [
-          "NETSTANDARD1_1"
+          "NETSTANDARD1_3"
         ]
+      },
+      "dependencies": {
+        "System.Runtime": "4.1.0",
+        "System.Diagnostics.Debug": "4.0.11",
+        "System.Runtime.Extensions": "4.1.0",
+        "System.Text.Encoding": "4.0.11",
+        "System.Security.Cryptography.Primitives": "4.0.0",
+        "System.Collections": "4.0.11",
+        "System.Linq": "4.1.0",
+        "System.Net.Http": "4.1.0",
+        "System.Threading.Tasks": "4.0.11",
+        "System.Security.Cryptography.Algorithms": "4.2.0",
+        "Newtonsoft.Json": "9.0.1"
       }
     },
 
@@ -113,13 +146,17 @@
         ]
       },
       "frameworkAssemblies": {
-        "System": "",
-        "System.Linq": "",
-        "System.Threading.Tasks": ""
+        "System.Runtime": "",
+        "System.Diagnostics.Debug": "",
+        "System.Threading.Tasks": "",
+        "System.Runtime.Extensions": "",
+        "System.Text.Encoding": "",
+        "System.Linq": ""
       },
       "dependencies": {
         "PCLCrypto": "2.0.147",
-        "Microsoft.Net.Http": "2.2.29"
+        "Microsoft.Net.Http": "2.2.29",
+        "Newtonsoft.Json": "9.0.1"
       }
     }
   }

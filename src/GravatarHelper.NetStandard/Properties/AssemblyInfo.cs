@@ -22,8 +22,8 @@ using System.Runtime.InteropServices;
 [assembly:AssemblyTitle("GravatarHelper.NetStandard .NET 4.6.1")]
 #elif (NET462)
 [assembly:AssemblyTitle("GravatarHelper.NetStandard .NET 4.6.2")]
-#elif (NETSTANDARD1_1)
-[assembly:AssemblyTitle("GravatarHelper.NetStandard .NET Standard 1.1")]
+#elif (NETSTANDARD1_3)
+[assembly:AssemblyTitle("GravatarHelper.NetStandard .NET Standard 1.3")]
 #elif (PORTABLE259)
 [assembly:AssemblyTitle("GravatarHelper.NetStandard Portable 4.5")]
 #else
@@ -38,7 +38,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © Manoj Kulkarni 2017")]
 [assembly: AssemblyTrademark("")]
 
-#if !(PORTABLE259)
+#if !(PORTABLE259 || NETSTANDARD1_3)
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
 // COM, set the ComVisible attribute to true on that type.
