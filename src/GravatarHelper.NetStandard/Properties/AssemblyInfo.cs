@@ -39,6 +39,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.*")]
 [assembly: AssemblyCopyright("Copyright © Manoj Kulkarni 2017")]
 [assembly: AssemblyTrademark("")]
+[assembly: AssemblyKeyFile("Key.snk")]
 
 #if !(PORTABLE259 || NETSTANDARD1_3)
 // Setting ComVisible to false makes the types in this assembly not visible
