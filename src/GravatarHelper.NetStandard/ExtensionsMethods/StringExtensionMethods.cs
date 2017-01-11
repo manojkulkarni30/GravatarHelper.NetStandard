@@ -1,4 +1,4 @@
-﻿#if ( NETSTANDARD1_1 || NET35 || NET40 || NET45 || NET451 || NET452 || NET46 || NET461 || NET462)
+﻿#if ( NETSTANDARD1_3 || NET35 || NET40 || NET45 || NET451 || NET452 || NET46 || NET461 || NET462)
 using System.Security.Cryptography;
 #endif
 
