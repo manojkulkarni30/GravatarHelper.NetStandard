@@ -151,7 +151,8 @@
         "System.Threading.Tasks": "",
         "System.Runtime.Extensions": "",
         "System.Text.Encoding": "",
-        "System.Linq": ""
+        "System.Linq": "",
+        "System.Resources.ResourceManager": ""
       },
       "dependencies": {
         "PCLCrypto": "2.0.147",
