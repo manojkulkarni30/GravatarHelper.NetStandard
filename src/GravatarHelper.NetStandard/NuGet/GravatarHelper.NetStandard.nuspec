@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>GravatarHelper.NetStandard</id>
+    <version>1.0.0-beta</version>
+    <title>GravatarHelper.NetStandard</title>
+    <authors>Manoj Kulkarni</authors>
+    <owners>Manoj Kulkarni</owners>
+    <licenseUrl>https://github.com/manojkulkarni30/GravatarHelper.NetStandard/blob/master/License.txt</licenseUrl>
+    <projectUrl>https://github.com/manojkulkarni30/GravatarHelper.NetStandard</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple .Net Standard library to easily get profile picture, QR code image for profile and profile information for a user from Gravatar.</description>
+    <releaseNotes>Beta release</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>gravatar, net standard</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework3.5" >
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+      <group targetFramework=".NETFramework4.0" >
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+      <group targetFramework=".NETFramework4.5" >
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+      <group targetFramework=".NETFramework4.5.1" >
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+      <group targetFramework=".NETFramework4.5.2" >
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+      <group targetFramework=".NETFramework4.6" >
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+      <group targetFramework=".NETFramework4.6.1" >
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+      <group targetFramework=".NETFramework4.6.2" >
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Diagnostics.Debug" version="4.0.11" />
+        <dependency id="System.Runtime.Extensions" version="4.1.0" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+        <dependency id="System.Security.Cryptography.Primitives" version="4.0.0"/>
+        <dependency id="System.Collections" version="4.0.11"/>
+        <dependency id="System.Linq" version="4.1.0" />
+        <dependency id="System.Net.Http" version="4.1.0" />
+        <dependency id="System.Threading.Tasks" version="4.0.11" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.2.0" />
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+      <group targetFramework=".NETPortable4.5-Profile259" >
+        <dependency id="PCLCrypto" version="2.0.147" />
+        <dependency id="Microsoft.Net.Http" version="2.2.29" />
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\bin\Release\net35\GravatarHelper.NetStandard.dll" target="lib\net35\GravatarHelper.NetStandard.dll" />
+    <file src="..\bin\Release\net40\GravatarHelper.NetStandard.dll" target="lib\net40\GravatarHelper.NetStandard.dll" />
+    <file src="..\bin\Release\net45\GravatarHelper.NetStandard.dll" target="lib\net45\GravatarHelper.NetStandard.dll" />
+    <file src="..\bin\Release\net451\GravatarHelper.NetStandard.dll" target="lib\net451\GravatarHelper.NetStandard.dll" />
+    <file src="..\bin\Release\net452\GravatarHelper.NetStandard.dll" target="lib\net452\GravatarHelper.NetStandard.dll" />
+    <file src="..\bin\Release\net46\GravatarHelper.NetStandard.dll" target="lib\net46\GravatarHelper.NetStandard.dll" />
+    <file src="..\bin\Release\net461\GravatarHelper.NetStandard.dll" target="lib\net461\GravatarHelper.NetStandard.dll" />
+    <file src="..\bin\Release\net462\GravatarHelper.NetStandard.dll" target="lib\net462\GravatarHelper.NetStandard.dll" />
+    <file src="..\bin\Release\netstandard1.3\GravatarHelper.NetStandard.dll" target="lib\netstandard1.3\GravatarHelper.NetStandard.dll" />
+    <file src="..\bin\Release\portable45-net45+win8+wp8+wpa81\GravatarHelper.NetStandard.dll" target="lib\portable45-net45+win8+wp8+wpa81\GravatarHelper.NetStandard.dll" />
+  </files>
+</package>
