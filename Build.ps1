@@ -61,5 +61,4 @@ $revision = "{0:D4}" -f [convert]::ToInt32($revision, 10)
 
 exec { & dotnet pack .\src\GravatarHelper.NetStandard -c Release -o .\artifacts --version-suffix=$revision }
 
-Read-Host -Prompt "Press Enter to exit"
 
