@@ -4,7 +4,9 @@ A simple [.Net standard library](https://docs.microsoft.com/en-us/dotnet/article
 
 #### Build Status:
 
-![](https://ci.appveyor.com/api/projects/status/9gwwfn9lb0bxq846?svg=true)
+![App Veyor](https://ci.appveyor.com/api/projects/status/9gwwfn9lb0bxq846?svg=true)
+[![MyGet CI](https://img.shields.io/myget/manojkulkarni30/v/GravatarHelper.NetStandard.svg)](http://myget.org/gallery/manojkulkarni30)
+[![NuGet](https://img.shields.io/nuget/v/GravatarHelper.NetStandard.svg)](https://www.nuget.org/packages/GravatarHelper.NetStandard/)
 
 #### Setup
 
