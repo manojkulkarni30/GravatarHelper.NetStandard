@@ -1,16 +1,29 @@
-version: 1.0.0.{build}.{branch}
-
-nuget:
-  account_feed: true
-  
-init:
-  - git config --global core.autocrlf true
-  
-install:
- - cmd: nuget sources add -Name api.nuget.org -Source https://api.nuget.org/v3/index.json
-
-before_build:
- - cmd: dotnet restore
-
-build_script:
- - cmd: dotnet build "src\GravatarHelper.NetStandard"
+version: '{build}'  
+pull_requests:  
+  do_not_increment_build_number: true
+branches:  
+  only:
+  - master
+nuget:  
+  disable_publish_on_pr: true
+build_script:  
+- ps: .\Build.ps1
+test: off  
+artifacts:  
+- path: .\artifacts\**\*.nupkg
+  name: NuGet
+deploy:  
+- provider: NuGet
+  server: https://www.myget.org/F/manojkulkarni30/api/v2/package
+  api_key:
+    secure: /kkvZoE04QHo7umHPGp6NTCbp8tNuuc/SSpaxlGU0QI+l9hibm3ONK3v3MvFVcqC
+  skip_symbols: true
+  on:
+    branch: master
+- provider: NuGet
+  name: production
+  api_key:
+    secure: wOB2AdXDbuwFYNzEp9tulWBF8f4CZY54pzAdUEdlaPBMQ6NBdWhY5FOorPE6RjGG
+  on:
+    branch: master
+    appveyor_repo_tag: true
