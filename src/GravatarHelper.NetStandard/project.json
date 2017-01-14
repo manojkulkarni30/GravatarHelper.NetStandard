@@ -146,13 +146,27 @@
         ]
       },
       "frameworkAssemblies": {
-        "System.Runtime": "",
-        "System.Diagnostics.Debug": "",
-        "System.Threading.Tasks": "",
-        "System.Runtime.Extensions": "",
-        "System.Text.Encoding": "",
-        "System.Linq": "",
-        "System.Resources.ResourceManager": ""
+        "System.Runtime": {
+          "type": "build"
+        },
+        "System.Diagnostics.Debug": {
+          "type": "build"
+        },
+        "System.Threading.Tasks": {
+          "type": "build"
+        },
+        "System.Runtime.Extensions": {
+          "type": "build"
+        },
+        "System.Text.Encoding": {
+          "type": "build"
+        },
+        "System.Linq": {
+          "type": "build"
+        },
+        "System.Resources.ResourceManager": {
+          "type": "build"
+        }
       },
       "dependencies": {
         "PCLCrypto": "2.0.147",
