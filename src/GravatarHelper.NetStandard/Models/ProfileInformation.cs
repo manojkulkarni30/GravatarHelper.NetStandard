@@ -1,11 +1,18 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace GravatarHelper.NetStandard.Models
 {
     public class ProfileInformation
     {
+        public ProfileInformation()
+        {
+            Photos = new List<Photo>();
+            SocialLinks = new List<SocialLink>();
+        }
+
         [JsonProperty(PropertyName ="id")]
-        public string id { get; set; }
+        public string Id { get; set; }
 
         [JsonProperty(PropertyName = "profileUrl")]
         public string ProfileUrl { get; set; }
@@ -17,7 +24,7 @@ namespace GravatarHelper.NetStandard.Models
         public string ThumbnailUrl { get; set; }
 
         [JsonProperty(PropertyName = "photos")]
-        public Photo[] Photos { get; set; }
+        public List<Photo> Photos { get; set; }
 
         [JsonProperty(PropertyName = "name")]
         public Name Name { get; set; }
@@ -29,6 +36,6 @@ namespace GravatarHelper.NetStandard.Models
         public string AboutMe { get; set; }
 
         [JsonProperty(PropertyName = "urls")]
-        public SocialLink[] SocialLinks { get; set; }
+        public List<SocialLink> SocialLinks { get; set; }
     }
 }

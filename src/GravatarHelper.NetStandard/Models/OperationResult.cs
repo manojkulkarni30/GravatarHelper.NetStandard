@@ -4,7 +4,7 @@
     {
         public bool Success { get; set; }
 
-        public ProfileInformation GravatarProfileInformation { get; set; }
+        public ProfileInformation Profile { get; set; }
 
         public string Error { get; set; }
     }
