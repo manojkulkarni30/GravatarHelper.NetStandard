@@ -14,7 +14,13 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GravatarHelper.NetStandard"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B8C83836-05B0-47DC-A033-0C57EA0F16EC}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GravatarHelper.NetStandard.Tests", "GravatarHelper.NetStandard.Tests\GravatarHelper.NetStandard.Tests.xproj", "{7A542659-2330-40B7-B3C0-40696D9C0530}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{9F51DC60-DC68-4BB1-B41C-65CF85BC22E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspnetCoreApp", "AspnetCoreApp", "{14ED0261-D03D-4463-98DC-2EB091CEE4DF}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GravatarHelper.NetStandard.AspNetCore", "samples\AspNetCoreApp\GravatarHelper.NetStandard.AspNetCore\GravatarHelper.NetStandard.AspNetCore.xproj", "{0E98F0DA-E3DB-473D-9E49-73CC40153E7E}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "GravatarHelper.NetStandard.Tests", "test\GravatarHelper.NetStandard.Tests\GravatarHelper.NetStandard.Tests.xproj", "{7A542659-2330-40B7-B3C0-40696D9C0530}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +32,10 @@ Global
 		{2320FE5D-B009-4969-A7E1-56E575D5491D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2320FE5D-B009-4969-A7E1-56E575D5491D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2320FE5D-B009-4969-A7E1-56E575D5491D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E98F0DA-E3DB-473D-9E49-73CC40153E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E98F0DA-E3DB-473D-9E49-73CC40153E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E98F0DA-E3DB-473D-9E49-73CC40153E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E98F0DA-E3DB-473D-9E49-73CC40153E7E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A542659-2330-40B7-B3C0-40696D9C0530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A542659-2330-40B7-B3C0-40696D9C0530}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A542659-2330-40B7-B3C0-40696D9C0530}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,6 +46,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2320FE5D-B009-4969-A7E1-56E575D5491D} = {51BB0D55-DE86-42BD-B0F2-BF65053A8C05}
+		{9F51DC60-DC68-4BB1-B41C-65CF85BC22E9} = {51BB0D55-DE86-42BD-B0F2-BF65053A8C05}
+		{14ED0261-D03D-4463-98DC-2EB091CEE4DF} = {9F51DC60-DC68-4BB1-B41C-65CF85BC22E9}
+		{0E98F0DA-E3DB-473D-9E49-73CC40153E7E} = {14ED0261-D03D-4463-98DC-2EB091CEE4DF}
 		{7A542659-2330-40B7-B3C0-40696D9C0530} = {B8C83836-05B0-47DC-A033-0C57EA0F16EC}
 	EndGlobalSection
 EndGlobal
