@@ -39,7 +39,8 @@
       "frameworkAssemblies": {
         "mscorlib": "",
         "System": "",
-        "System.Core": ""
+        "System.Core": "",
+        "System.Web": ""
       },
       "dependencies": {
         "Newtonsoft.Json": "9.0.1"

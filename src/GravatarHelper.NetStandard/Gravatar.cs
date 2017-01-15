@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Linq;
 using System.Net;
+using System.Collections.Generic;
 
 #if !(NET40 || NET35)
 using System.Net.Http;
@@ -11,7 +12,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 #endif
 
-#if (NET35)
+#if (NET35 || NET40)
 using System.Web;
 #endif
 
@@ -71,11 +72,11 @@ namespace GravatarHelper.NetStandard
         }
 
         /// <summary>
-        /// Validate string content
+        /// Validate string
         /// </summary>
         /// <param name="str">String</param>
         /// <returns>Boolean</returns>
-        private static bool IsValidString(string str)
+        private static bool IsNullOrWhiteSpace(string str)
         {
 #if (NET35)
             // https://msdn.microsoft.com/en-us/library/system.string.isnullorwhitespace.aspx
@@ -86,17 +87,29 @@ namespace GravatarHelper.NetStandard
         }
 
         /// <summary>
-        /// Encode url
+        /// Encode String Content
         /// </summary>
-        /// <param name="str">URL</param>
-        /// <returns></returns>
+        /// <param name="str">String Input</param>
+        /// <returns>Encoded String</returns>
         private static string EncodeUrl(string str)
         {
-#if (NET35)
-            return HttpUtility.HtmlEncode(str);
+#if (NET35 || NET40)
+            return HttpUtility.UrlEncode(str);
 #else
-            return WebUtility.HtmlEncode(str);
+            return WebUtility.UrlEncode(str);
 #endif
+        }
+
+        /// <summary>
+        /// Remove leading and trailing whitespace and convert all characters to lowercase
+        /// </summary>
+        /// <param name="email">Email address</param>
+        /// <returns>String</returns>
+        private static string RemoveLeadingAndTrailingWhiteSpaceAndConvertToLowerCase(string email)
+        {
+            email = email.Trim();
+            email = email.ToLower();
+            return email;
         }
 
         #endregion
@@ -111,13 +124,13 @@ namespace GravatarHelper.NetStandard
         public static string GetGravatarImageUrl(string email)
         {
             return GetGravatarImageUrl(email,
-                imageSize:0,
-                imageExtension:null,
-                defaultImageUrl:string.Empty,
-                forceDefaultImage:false,
-                gravatarDefaultImageType:null,
-                rating:null,
-                useSecureUrl:false);
+                imageSize: 0,
+                imageExtension: null,
+                defaultImageUrl: string.Empty,
+                forceDefaultImage: false,
+                gravatarDefaultImageType: null,
+                rating: null,
+                useSecureUrl: false);
         }
 
         /// <summary>
@@ -144,7 +157,7 @@ namespace GravatarHelper.NetStandard
         /// <param name="email">Email Address</param>
         /// <param name="imageSize">Image Size</param>
         /// <returns>Gravatar Image URL</returns>
-        public static string GetGravatarImageUrl(string email,int imageSize)
+        public static string GetGravatarImageUrl(string email, int imageSize)
         {
             return GetGravatarImageUrl(email,
                 imageSize: imageSize,
@@ -177,7 +190,16 @@ namespace GravatarHelper.NetStandard
             GravatarDefaultImageType? gravatarDefaultImageType = null,
             GravatarRating? rating = null, bool useSecureUrl = false)
         {
+
+            if (IsNullOrWhiteSpace(email))
+                return string.Empty;
+
             var url = new StringBuilder();
+
+            var parameters = new Dictionary<string, object>();
+
+            // Remove leading and trailing whitespaces and force all characters to be lower case
+            email = RemoveLeadingAndTrailingWhiteSpaceAndConvertToLowerCase(email);
 
             // Create URL with MD5 has of an email
             if (useSecureUrl)
@@ -186,7 +208,7 @@ namespace GravatarHelper.NetStandard
                 url.Append($"{GravatarBaseUrl + GravatarImagePath}{email.ToMd5Hash()}");
 
             // Image extension (Supported extensions are jpg, jpeg, gif, png)
-            if (imageExtension!=null)
+            if (imageExtension != null)
                 url.Append($".{imageExtension.ToString().ToLower()}");
 
             // Image size
@@ -195,27 +217,42 @@ namespace GravatarHelper.NetStandard
                 // Validate image size
                 imageSize = ValidateImageSize(imageSize);
 
-                url.Append($"?s={imageSize}");
+                parameters.Add("s", imageSize);
             }
 
             // Display custome default picture 
-            if (!IsValidString(defaultImageUrl))
-                url.Append($"&d={EncodeUrl(defaultImageUrl)}");
+            if (!IsNullOrWhiteSpace(defaultImageUrl))
+                parameters.Add("d", EncodeUrl(defaultImageUrl));
 
             // Display gravatar default image
             else if (gravatarDefaultImageType != null)
-                url.Append($"&d={gravatarDefaultImageType.ToString().ToLower()}");
+                parameters.Add("d",
+                    gravatarDefaultImageType == GravatarDefaultImageType.Image404 ?
+                    "404" : gravatarDefaultImageType.ToString().ToLower());
 
             // Force to display the default image
             if (forceDefaultImage)
-                url.Append("&f=y");
+                parameters.Add("f", "y");
 
             // Rating
             if (rating != null)
-                url.Append($"&r={rating.ToString().ToLower()}");
+                parameters.Add("r", rating.ToString().ToLower());
+
+            if (parameters.Any())
+            {
+                foreach (var param in parameters)
+                {
+                    if (param.Key == parameters.FirstOrDefault().Key)
+                        url.Append($"?{param.Key}={param.Value}");
+                    else
+                        url.Append($"&{param.Key}={param.Value}");
+                }
+            }
 
             return url.ToString();
         }
+
+        
 
 
 #if !(NET40 || NET35)
@@ -224,7 +261,7 @@ namespace GravatarHelper.NetStandard
         /// </summary>
         /// <param name="email">Email Address</param>
         /// <returns>Task</returns>
-        public static async Task<OperationResult> GetProfileInformationAsync(string email)
+        public static async Task<OperationResult> GetGravatarProfileInformationAsync(string email)
         {
             var operationResult = new OperationResult();
             try
@@ -241,7 +278,7 @@ namespace GravatarHelper.NetStandard
 
                     string result = await client.GetStringAsync($"{email.ToMd5Hash()}.json");
 
-                    if (!IsValidString(result))
+                    if (!IsNullOrWhiteSpace(result))
                     {
                         var deserializedResult = JsonConvert.DeserializeObject<GravatarProfileModel>(result);
                         if (deserializedResult != null && deserializedResult.ProfileInfo != null && deserializedResult.ProfileInfo.Any())
@@ -266,7 +303,7 @@ namespace GravatarHelper.NetStandard
         /// </summary>
         /// <param name="email">Email Address</param>
         /// <returns>Task</returns>
-        public static OperationResult GetProfileInformation(string email)
+        public static OperationResult GetGravatarProfileInformation(string email)
         {
             var operationResult = new OperationResult();
             try
@@ -278,7 +315,7 @@ namespace GravatarHelper.NetStandard
 
                     string result = client.DownloadString($"{GravatarProfileBaseUrl + email.ToMd5Hash()}.json");
 
-                    if (!IsValidString(result))
+                    if (!IsNullOrWhiteSpace(result))
                     {
                         var deserializedResult = JsonConvert.DeserializeObject<GravatarProfileModel>(result);
                         if (deserializedResult != null && deserializedResult.ProfileInfo != null && deserializedResult.ProfileInfo.Any())
@@ -307,9 +344,23 @@ namespace GravatarHelper.NetStandard
         /// <returns>QR Code Image For Gravatar Profile</returns>
         public static string GetGravatarProfileQrCodeImage(string email, int imageSize = 0, bool useSecureUrl = false)
         {
-            imageSize = ValidateImageSize(imageSize);
+            if (IsNullOrWhiteSpace(email))
+                return string.Empty;
 
-            return $"{(useSecureUrl ? GravatarSecureBaseUrl : GravatarBaseUrl)}/{email.ToMd5Hash()}.qr?s={imageSize}";
+            var url = new StringBuilder();
+
+            email = RemoveLeadingAndTrailingWhiteSpaceAndConvertToLowerCase(email);
+                
+            url.Append($"{(useSecureUrl ? GravatarSecureBaseUrl : GravatarBaseUrl)}/{email.ToMd5Hash()}.qr");
+
+            if (imageSize != 0)
+            {
+                imageSize = ValidateImageSize(imageSize);
+
+                url.Append($"?s={imageSize}");
+            }
+
+            return url.ToString();
         }
         #endregion
     }
