@@ -1,0 +1,96 @@
+﻿@using GravatarHelper.NetStandard
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron align-center">
+    <h1>GravatarHelper.NetStandard</h1>
+    <p>A simple .Net Standard library to easily get profile picture, QR code image for profile and profile information for a user from Gravatar.</p>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Installation
+    </div>
+    <div class="panel-body">
+        <h4>Nuget</h4>
+        <p>
+            PM&gt; Install-Package <a href="https://www.nuget.org/packages/GravatarHelper.NetStandard" target="_blank">GravatarHelper.NetStandard -Version 1.0.0-beta</a>
+        </p>
+        <h4>MyGet</h4>
+        <p>
+            PM&gt; Install-Package <a href="https://www.myget.org/F/manojkulkarni30/api/v2/package/GravatarHelper.NetStandard/1.0.0-beta-0029" target="_blank">GravatarHelper.NetStandard -Version 1.0.0-beta-0029</a>
+        </p>
+        <p>
+            <h4>Supported Platforms:</h4>
+            <ul>
+                <li>.NETFramework 3.5</li>
+                <li>.NETFramework 4.0</li>
+                <li>.NETFramework 4.5</li>
+                <li>.NETFramework 4.5.1</li>
+                <li>.NETFramework 4.5.2</li>
+                <li>.NETFramework 4.6</li>
+                <li>.NETFramework 4.6.1</li>
+                <li>.NETFramework 4.6.2</li>
+                <li>Portable Class Library (.NETFramework 4.5, Windows 8.0, WindowsPhone 8.0, WindowsPhoneApp 8.1): profile259</li>
+                <li>.NETStandard 1.3</li>
+            </ul>
+        </p>
+    </div>
+</div>
+
+
+<div class="sample">
+    <h3>Gravatar Image URL:</h3>
+    <p>Code:</p>
+    <pre>
+    <code>
+            @@Gravatar.GetGravatarImageUrl("example@test.com");
+        </code>
+    </pre>
+    <p>Output</p>
+    <img src="@Gravatar.GetGravatarImageUrl("example@test.com")" />
+</div>
+
+<div class="sample">
+    <h3>Gravatar Image URL With Image Size Option:</h3>
+    <p>Code:</p>
+    <pre>
+    <code>
+            @@Gravatar.GetGravatarImageUrl("example@test.com",imageSize:200);
+        </code>
+    </pre>
+    <p>Output</p>
+    <img src="@Gravatar.GetGravatarImageUrl("example@test.com",imageSize:200)" />
+</div>
+
+<div class="sample">
+    <h3>Gravatar Profile QR Code Image URL:</h3>
+    <p>Code:</p>
+    <pre>
+    <code class="c#">
+               @@Gravatar.GetGravatarProfileQrCodeImage("example@test.com");
+        </code>
+    </pre>
+    <p>Output</p>
+    <img src="@Gravatar.GetGravatarProfileQrCodeImage("example@test.com")" />
+</div>
+
+<div class="sample">
+    <h3>Gravatar Profile QR Code Image URL With Image Size Option:</h3>
+    <p>Code:</p>
+    <pre>
+    <code>
+               @@Gravatar.GetGravatarProfileQrCodeImage("example@test.com",imageSize:200);
+        </code>
+    </pre>
+    <p>Output</p>
+    <img src="@Gravatar.GetGravatarProfileQrCodeImage("example@test.com",imageSize:200)" />
+</div>
+
+@section scripts{
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+}
