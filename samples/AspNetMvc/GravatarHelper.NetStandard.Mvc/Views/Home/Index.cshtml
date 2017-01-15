@@ -1,6 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using GravatarHelper.NetStandard
+@{
+    ViewBag.Title = "Home Page";
 }
+
 
 <div class="jumbotron align-center">
     <h1>GravatarHelper.NetStandard</h1>
@@ -55,7 +57,7 @@
     <h3>Gravatar Image URL With Image Size Option:</h3>
     <p>Code:</p>
     <pre>
-        <code>
+    <code>
             @@Gravatar.GetGravatarImageUrl("example@test.com",imageSize:200);
         </code>
     </pre>
@@ -67,7 +69,7 @@
     <h3>Gravatar Profile QR Code Image URL:</h3>
     <p>Code:</p>
     <pre>
-    <code>
+    <code class="c#">
                @@Gravatar.GetGravatarProfileQrCodeImage("example@test.com");
         </code>
     </pre>
@@ -87,3 +89,8 @@
     <img src="@Gravatar.GetGravatarProfileQrCodeImage("example@test.com",imageSize:200)" />
 </div>
 
+@section scripts{
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+}
