@@ -6,7 +6,7 @@
   "authors": [ "Manoj Kulkarni" ],
 
   "dependencies": {
-    "GravatarHelper.NetStandard": "1.0.0-beta",
+    "GravatarHelper.NetStandard": "1.0.0-rc",
     "xunit": "2.2.0-beta4-build3444",
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "xunit.runner.visualstudio": "2.1.0"
