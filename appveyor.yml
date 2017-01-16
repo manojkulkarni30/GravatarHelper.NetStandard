@@ -1,9 +1,6 @@
 version: '{build}'  
 pull_requests:  
   do_not_increment_build_number: true
-branches:  
-  only:
-  - master
 nuget:  
   disable_publish_on_pr: true
 build_script:  
@@ -19,11 +16,11 @@ deploy:
     secure: /kkvZoE04QHo7umHPGp6NTCbp8tNuuc/SSpaxlGU0QI+l9hibm3ONK3v3MvFVcqC
   skip_symbols: true
   on:
-    branch: master
+    branch: master, dev
 - provider: NuGet
   name: production
   api_key:
     secure: wOB2AdXDbuwFYNzEp9tulWBF8f4CZY54pzAdUEdlaPBMQ6NBdWhY5FOorPE6RjGG
   on:
-    branch: master
+    branch: master, dev
     appveyor_repo_tag: true
