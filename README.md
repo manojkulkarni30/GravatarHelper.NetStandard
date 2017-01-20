@@ -44,7 +44,7 @@ To get image url over https use following syntax
 ```
 There are different overload methods available where you can specify different parameters like image size, file extension, rating, gravatar default image type etc. 
 
-## Get the QR Code Image For Gravatar Profile:
+## Get the QR Code Image URL:
 
 To get the QR code image for email address "[example@test.com](mailto:example@test.com)", use the following syntax in web application
 
