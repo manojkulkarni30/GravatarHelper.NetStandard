@@ -1,4 +1,4 @@
-﻿# Gravatar Helper
+﻿# GravatarHelper.NetStandard
 
 A simple [.Net standard library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to easily get profile picture, QR code image for profile and profile information for a user from [Gravatar](http://en.gravatar.com/).
 
@@ -25,7 +25,7 @@ A simple [.Net standard library](https://docs.microsoft.com/en-us/dotnet/article
 - .NetStandard 1.3
 - Portable Class Library (.NETFramework 4.5, Windows 8.0, WindowsPhone 8.0, WindowsPhoneApp 8.1)- Profile 259
 
-## How To Get Gravatar Image URL ?
+## Get Gravatar Image URL:
 
 To get gravatar image url for email address "[example@test.com](mailto:example@test.com)", use the following syntax in web application.
 
@@ -44,7 +44,7 @@ To get image url over https use following syntax
 ```
 There are different overload methods available where you can specify different parameters like image size, file extension, rating, gravatar default image type etc. 
 
-## How To Get the QR Code Image For Gravatar Profile ?
+## Get the QR Code Image For Gravatar Profile:
 
 To get the QR code image for email address "[example@test.com](mailto:example@test.com)", use the following syntax in web application
 
@@ -54,7 +54,7 @@ To get the QR code image for email address "[example@test.com](mailto:example@te
 
 ```
 
-## How To Get The Gravatar Profile Information ?
+## Get The Gravatar Profile Information:
 
 To get the gravatar profile information for a user using email address "[example@test.com](mailto:example@test.com)", use the following syntax.
 
