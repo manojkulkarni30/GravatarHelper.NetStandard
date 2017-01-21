@@ -1,6 +1,6 @@
 ﻿# GravatarHelper.NetStandard
 
-A simple [.Net standard library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to easily get profile picture, QR code image for profile and profile information for a user from [Gravatar](http://en.gravatar.com/).
+A simple [.Net standard library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to easily get profile picture URL, QR code image URL for profile and profile information for a user using email address from [Gravatar](http://en.gravatar.com/).
 
 
 ## Setup
@@ -27,34 +27,32 @@ A simple [.Net standard library](https://docs.microsoft.com/en-us/dotnet/article
 
 ## Get Gravatar Image URL:
 
-To get gravatar image url for email address "[example@test.com](mailto:example@test.com)", use the following syntax in web application.
+To get gravatar image URL for email address "[example@test.com](mailto:example@test.com)", use the following syntax.
 
-```html
+```csharp
 
-<!--Returns Gravatar image url over http-->
-<img src='@Gravatar.GetGravatarImageUrl("example@test.com")'/>
-
-```
-To get image url over https use following syntax
-```html
-
-<!--Returns Gravatar image url over https-->
-<img src='@Gravatar.GetSecureGravatarImageUrl("example@test.com")'/>
+Gravatar.GetGravatarImageUrl("example@test.com");
 
 ```
-There are different overload methods available where you can specify different parameters like image size, file extension, rating, gravatar default image type etc. 
+To get image URL over https, use following syntax
+```csharp
+
+Gravatar.GetSecureGravatarImageUrl("example@test.com");
+
+```
+There are different overload methods available where you can specify different parameters like image size, required extension for an image, rating, gravatar default image type etc. 
 
 ## Get the QR Code Image URL:
 
-To get the QR code image for email address "[example@test.com](mailto:example@test.com)", use the following syntax in web application
+To get the QR code image URL for email address "[example@test.com](mailto:example@test.com)", use the following syntax.
 
-```html
+```csharp
 
-<img src='@Gravatar.GetGravatarProfileQrCodeImage("example@test.com")'/>
+Gravatar.GetGravatarProfileQrCodeImage("example@test.com");
 
 ```
 
-## Get The Gravatar Profile Information:
+## Get Gravatar Profile Information:
 
 To get the gravatar profile information for a user using email address "[example@test.com](mailto:example@test.com)", use the following syntax.
 
@@ -64,7 +62,7 @@ To get the gravatar profile information for a user using email address "[example
 await Gravatar.GetGravatarProfileInformationAsync("example@test.com");
 
 // For .Net Framework 3.5 and 4.0
-GetGravatarProfileInformation("example@test.com");
+Gravatar.GetGravatarProfileInformation("example@test.com");
 
 ```
 Above method will return an object of type ```OperationResult```. 
