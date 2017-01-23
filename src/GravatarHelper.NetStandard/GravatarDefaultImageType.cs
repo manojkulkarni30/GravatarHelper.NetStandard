@@ -6,6 +6,11 @@
     public enum GravatarDefaultImageType
     {
         /// <summary>
+        /// A geometric pattern based on an email hash
+        /// </summary>
+        Identicon,
+
+        /// <summary>
         /// Do not load any image if none is associated with the email hash, instead return an HTTP 404 (File Not Found) response
         /// </summary>
         Image404,
@@ -14,11 +19,6 @@
         /// mm: (mystery-man) a simple, cartoon-style silhouetted outline of a person (does not vary by email hash)
         /// </summary>
         MM,
-
-        /// <summary>
-        /// A geometric pattern based on an email hash
-        /// </summary>
-        Identicon,
 
         /// <summary>
         /// A generated 'monster' with different colors, faces, etc
