@@ -4,8 +4,8 @@ A simple [.Net standard library](https://docs.microsoft.com/en-us/dotnet/article
 
 
 ## Setup
-- Available on Nuget: https://www.nuget.org/packages/GravatarHelper.NetStandard/1.0.0-beta
-- To use this library in Xamarin.Forms application, install the [GravatarHelper.NetStandard](https://www.nuget.org/packages/GravatarHelper.NetStandard/1.0.0-beta) nuget package in portable class library and [PCLCrypto](https://www.nuget.org/packages/PCLCrypto/) package in each client project (e.g Android, iOS and UWP).
+- Available on Nuget: https://www.nuget.org/packages/GravatarHelper.NetStandard
+- To use this library in Xamarin.Forms application, install the [GravatarHelper.NetStandard](https://www.nuget.org/packages/GravatarHelper.NetStandard) nuget package in portable class library and [PCLCrypto](https://www.nuget.org/packages/PCLCrypto/) package in each client project (e.g Android, iOS and UWP).
 
 ## Build Status
 
